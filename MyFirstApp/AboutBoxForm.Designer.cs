@@ -76,6 +76,7 @@
             aboutControl1.Location = new Point(0, 0);
             aboutControl1.Margin = new Padding(10);
             aboutControl1.Name = "aboutControl1";
+            aboutControl1.Padding = new Padding(0, 10, 0, 0);
             aboutControl1.Size = new Size(294, 301);
             aboutControl1.TabIndex = 2;
             // 
