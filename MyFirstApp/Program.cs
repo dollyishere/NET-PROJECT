@@ -1,6 +1,7 @@
 using Microsoft.Extensions.Configuration;
 using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
+using System.Reflection;
 
 namespace MyFirstApp
 {
@@ -27,10 +28,22 @@ namespace MyFirstApp
             // start build
             Configuration = builder.Build();
 
+            bool createNew = false;
+            Mutex mutex = new Mutex(true, Assembly.GetEntryAssembly().FullName, out createNew);
+            if (createNew)
+            {
+                ApplicationConfiguration.Initialize();
+                Application.Run(new MDI());
+            } else
+            {
+                MessageBox.Show("Another instance of the application is already running");
+            }
+
 
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+
             Application.Run(new MDI());
         }
     }

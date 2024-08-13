@@ -302,14 +302,15 @@
             // 
             clsInfoToolStripMenuItem.Image = (Image)resources.GetObject("clsInfoToolStripMenuItem.Image");
             clsInfoToolStripMenuItem.Name = "clsInfoToolStripMenuItem";
-            clsInfoToolStripMenuItem.Size = new Size(166, 22);
+            clsInfoToolStripMenuItem.Size = new Size(180, 22);
             clsInfoToolStripMenuItem.Text = "클래스 코드";
+            clsInfoToolStripMenuItem.Click += clsInfoToolStripMenuItem_Click;
             // 
             // detectedToolStripMenuItem
             // 
             detectedToolStripMenuItem.Image = (Image)resources.GetObject("detectedToolStripMenuItem.Image");
             detectedToolStripMenuItem.Name = "detectedToolStripMenuItem";
-            detectedToolStripMenuItem.Size = new Size(166, 22);
+            detectedToolStripMenuItem.Size = new Size(180, 22);
             detectedToolStripMenuItem.Text = "객체 인식 데이터";
             detectedToolStripMenuItem.Click += detectedToolStripMenuItem_Click;
             // 
@@ -323,15 +324,15 @@
             // optionsToolStripMenuItem
             // 
             optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            optionsToolStripMenuItem.Size = new Size(180, 22);
+            optionsToolStripMenuItem.Size = new Size(118, 22);
             optionsToolStripMenuItem.Text = "옵션(&O)";
             // 
             // dB정보ToolStripMenuItem
             // 
             dB정보ToolStripMenuItem.Name = "dB정보ToolStripMenuItem";
-            dB정보ToolStripMenuItem.Size = new Size(180, 22);
+            dB정보ToolStripMenuItem.Size = new Size(118, 22);
             dB정보ToolStripMenuItem.Text = "DB 정보";
-            dB정보ToolStripMenuItem.Click += dB정보ToolStripMenuItem_Click;
+            dB정보ToolStripMenuItem.Click += dBInfoToolStripMenuItem_Click;
             // 
             // windowsMenu
             // 
@@ -393,7 +394,7 @@
             // 
             contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
             contentsToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.F1;
-            contentsToolStripMenuItem.Size = new Size(180, 22);
+            contentsToolStripMenuItem.Size = new Size(161, 22);
             contentsToolStripMenuItem.Text = "목차(&C)";
             // 
             // indexToolStripMenuItem
@@ -401,7 +402,7 @@
             indexToolStripMenuItem.Image = (Image)resources.GetObject("indexToolStripMenuItem.Image");
             indexToolStripMenuItem.ImageTransparentColor = Color.Black;
             indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-            indexToolStripMenuItem.Size = new Size(180, 22);
+            indexToolStripMenuItem.Size = new Size(161, 22);
             indexToolStripMenuItem.Text = "색인(&I)";
             // 
             // searchToolStripMenuItem
@@ -409,18 +410,18 @@
             searchToolStripMenuItem.Image = (Image)resources.GetObject("searchToolStripMenuItem.Image");
             searchToolStripMenuItem.ImageTransparentColor = Color.Black;
             searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            searchToolStripMenuItem.Size = new Size(180, 22);
+            searchToolStripMenuItem.Size = new Size(161, 22);
             searchToolStripMenuItem.Text = "검색(&S)";
             // 
             // toolStripSeparator8
             // 
             toolStripSeparator8.Name = "toolStripSeparator8";
-            toolStripSeparator8.Size = new Size(177, 6);
+            toolStripSeparator8.Size = new Size(158, 6);
             // 
             // aboutToolStripMenuItem
             // 
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(180, 22);
+            aboutToolStripMenuItem.Size = new Size(161, 22);
             aboutToolStripMenuItem.Text = "정보(&A)... ...";
             aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click;
             // 

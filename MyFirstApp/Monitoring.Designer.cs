@@ -34,6 +34,16 @@ namespace MyFirstApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Monitoring));
             tableLayoutPanel1 = new TableLayoutPanel();
             FilterGroupBox = new GroupBox();
+            label3 = new Label();
+            AreaText = new TextBox();
+            label4 = new Label();
+            label2 = new Label();
+            confidenceText = new TextBox();
+            confidenceLabel = new Label();
+            label1 = new Label();
+            toDateTimePicker = new DateTimePicker();
+            fromDateTimePicker = new DateTimePicker();
+            InquiryButton = new Button();
             textRadioButton = new RadioButton();
             imageRadioButton = new RadioButton();
             imageGroupBox = new GroupBox();
@@ -75,21 +85,121 @@ namespace MyFirstApp
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 48F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 270F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(813, 472);
+            tableLayoutPanel1.Size = new Size(900, 472);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // FilterGroupBox
             // 
             tableLayoutPanel1.SetColumnSpan(FilterGroupBox, 2);
+            FilterGroupBox.Controls.Add(label3);
+            FilterGroupBox.Controls.Add(AreaText);
+            FilterGroupBox.Controls.Add(label4);
+            FilterGroupBox.Controls.Add(label2);
+            FilterGroupBox.Controls.Add(confidenceText);
+            FilterGroupBox.Controls.Add(confidenceLabel);
+            FilterGroupBox.Controls.Add(label1);
+            FilterGroupBox.Controls.Add(toDateTimePicker);
+            FilterGroupBox.Controls.Add(fromDateTimePicker);
+            FilterGroupBox.Controls.Add(InquiryButton);
             FilterGroupBox.Controls.Add(textRadioButton);
             FilterGroupBox.Controls.Add(imageRadioButton);
             FilterGroupBox.Dock = DockStyle.Fill;
             FilterGroupBox.Location = new Point(3, 3);
             FilterGroupBox.Name = "FilterGroupBox";
-            FilterGroupBox.Size = new Size(807, 42);
+            FilterGroupBox.Size = new Size(894, 42);
             FilterGroupBox.TabIndex = 0;
             FilterGroupBox.TabStop = false;
             FilterGroupBox.Text = "Filter";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(732, 17);
+            label3.Name = "label3";
+            label3.Size = new Size(31, 15);
+            label3.TabIndex = 11;
+            label3.Text = "이상";
+            // 
+            // AreaText
+            // 
+            AreaText.Location = new Point(687, 13);
+            AreaText.Name = "AreaText";
+            AreaText.Size = new Size(39, 23);
+            AreaText.TabIndex = 10;
+            AreaText.KeyPress += AreaText_KeyPress;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("맑은 고딕", 9F, FontStyle.Bold);
+            label4.Location = new Point(647, 17);
+            label4.Name = "label4";
+            label4.Size = new Size(34, 15);
+            label4.TabIndex = 9;
+            label4.Text = "Area";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(607, 17);
+            label2.Name = "label2";
+            label2.Size = new Size(31, 15);
+            label2.TabIndex = 8;
+            label2.Text = "이상";
+            // 
+            // confidenceText
+            // 
+            confidenceText.Location = new Point(562, 13);
+            confidenceText.Name = "confidenceText";
+            confidenceText.Size = new Size(39, 23);
+            confidenceText.TabIndex = 7;
+            confidenceText.KeyPress += confidenceText_KeyPress;
+            // 
+            // confidenceLabel
+            // 
+            confidenceLabel.AutoSize = true;
+            confidenceLabel.Font = new Font("맑은 고딕", 9F, FontStyle.Bold);
+            confidenceLabel.Location = new Point(485, 17);
+            confidenceLabel.Name = "confidenceLabel";
+            confidenceLabel.Size = new Size(71, 15);
+            confidenceLabel.TabIndex = 6;
+            confidenceLabel.Text = "Confidence";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(343, 17);
+            label1.Name = "label1";
+            label1.Size = new Size(15, 15);
+            label1.TabIndex = 5;
+            label1.Text = "~";
+            // 
+            // toDateTimePicker
+            // 
+            toDateTimePicker.Format = DateTimePickerFormat.Short;
+            toDateTimePicker.Location = new Point(364, 13);
+            toDateTimePicker.Name = "toDateTimePicker";
+            toDateTimePicker.Size = new Size(108, 23);
+            toDateTimePicker.TabIndex = 4;
+            // 
+            // fromDateTimePicker
+            // 
+            fromDateTimePicker.Format = DateTimePickerFormat.Short;
+            fromDateTimePicker.Location = new Point(229, 13);
+            fromDateTimePicker.Name = "fromDateTimePicker";
+            fromDateTimePicker.Size = new Size(108, 23);
+            fromDateTimePicker.TabIndex = 3;
+            // 
+            // InquiryButton
+            // 
+            InquiryButton.Dock = DockStyle.Right;
+            InquiryButton.Location = new Point(816, 19);
+            InquiryButton.Name = "InquiryButton";
+            InquiryButton.Size = new Size(75, 20);
+            InquiryButton.TabIndex = 2;
+            InquiryButton.Text = "Inquiry";
+            InquiryButton.UseVisualStyleBackColor = true;
+            InquiryButton.Click += InquiryButton_Click;
             // 
             // textRadioButton
             // 
@@ -122,7 +232,7 @@ namespace MyFirstApp
             imageGroupBox.Dock = DockStyle.Fill;
             imageGroupBox.Location = new Point(3, 51);
             imageGroupBox.Name = "imageGroupBox";
-            imageGroupBox.Size = new Size(563, 264);
+            imageGroupBox.Size = new Size(624, 264);
             imageGroupBox.TabIndex = 1;
             imageGroupBox.TabStop = false;
             imageGroupBox.Text = "class by image";
@@ -133,7 +243,7 @@ namespace MyFirstApp
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(3, 50);
             panel2.Name = "panel2";
-            panel2.Size = new Size(557, 211);
+            panel2.Size = new Size(618, 211);
             panel2.TabIndex = 1;
             // 
             // classListView
@@ -142,13 +252,12 @@ namespace MyFirstApp
             classListView.LargeImageList = imageList;
             classListView.Location = new Point(0, 0);
             classListView.Name = "classListView";
-            classListView.Size = new Size(557, 211);
+            classListView.Size = new Size(618, 211);
             classListView.SmallImageList = imageList;
             classListView.StateImageList = imageList;
             classListView.TabIndex = 0;
             classListView.UseCompatibleStateImageBehavior = false;
             classListView.View = View.SmallIcon;
-            classListView.SelectedIndexChanged += classListView_SelectedIndexChanged;
             // 
             // imageList
             // 
@@ -242,13 +351,13 @@ namespace MyFirstApp
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(3, 19);
             panel1.Name = "panel1";
-            panel1.Size = new Size(557, 31);
+            panel1.Size = new Size(618, 31);
             panel1.TabIndex = 0;
             // 
             // clearButton
             // 
             clearButton.Dock = DockStyle.Right;
-            clearButton.Location = new Point(482, 0);
+            clearButton.Location = new Point(543, 0);
             clearButton.Name = "clearButton";
             clearButton.Size = new Size(75, 31);
             clearButton.TabIndex = 0;
@@ -261,9 +370,9 @@ namespace MyFirstApp
             textGroupBox.Controls.Add(panel4);
             textGroupBox.Controls.Add(panel3);
             textGroupBox.Dock = DockStyle.Fill;
-            textGroupBox.Location = new Point(572, 51);
+            textGroupBox.Location = new Point(633, 51);
             textGroupBox.Name = "textGroupBox";
-            textGroupBox.Size = new Size(238, 264);
+            textGroupBox.Size = new Size(264, 264);
             textGroupBox.TabIndex = 2;
             textGroupBox.TabStop = false;
             textGroupBox.Text = "class by text";
@@ -274,17 +383,16 @@ namespace MyFirstApp
             panel4.Dock = DockStyle.Bottom;
             panel4.Location = new Point(3, 50);
             panel4.Name = "panel4";
-            panel4.Size = new Size(232, 211);
+            panel4.Size = new Size(258, 211);
             panel4.TabIndex = 1;
             // 
             // classCheckedListBox
             // 
             classCheckedListBox.Dock = DockStyle.Fill;
             classCheckedListBox.FormattingEnabled = true;
-            classCheckedListBox.Items.AddRange(new object[] { "person", "bicycle", "car", "motorcycle", "airplane", "bus", "train", "truck", "boat", "traffic light", "fire hydrant", "stop sign", "parking meter", "bench", "bird", "cat", "dog", "horse", "sheep", "cow", "elephant", "bear", "zebra", "giraffe", "backpack", "umbrella", "handbag", "tie", "suitcase", "frisbee", "skis", "snowboard", "sports ball", "kite", "baseball bat", "baseball glove", "skateboard", "surfboard", "tennis racket", "bottle", "wine glass", "cup", "fork", "knife", "spoon", "bowl", "banana", "apple", "sandwich", "orange", "broccoli", "carrot", "hot dog", "pizza", "donut", "cake", "chair", "couch", "potted plant", "bed", "dining table", "toilet", "tv", "laptop", "mouse", "remote", "keyboard", "cell phone", "microwave", "oven", "toaster", "sink", "refrigerator", "book", "clock", "vase", "scissors", "teddy bear", "hair drier", "toothbrush" });
             classCheckedListBox.Location = new Point(0, 0);
             classCheckedListBox.Name = "classCheckedListBox";
-            classCheckedListBox.Size = new Size(232, 211);
+            classCheckedListBox.Size = new Size(258, 211);
             classCheckedListBox.TabIndex = 0;
             // 
             // panel3
@@ -293,13 +401,13 @@ namespace MyFirstApp
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(3, 19);
             panel3.Name = "panel3";
-            panel3.Size = new Size(232, 31);
+            panel3.Size = new Size(258, 31);
             panel3.TabIndex = 0;
             // 
             // clear2Button
             // 
             clear2Button.Dock = DockStyle.Right;
-            clear2Button.Location = new Point(157, 0);
+            clear2Button.Location = new Point(183, 0);
             clear2Button.Name = "clear2Button";
             clear2Button.Size = new Size(75, 31);
             clear2Button.TabIndex = 0;
@@ -314,14 +422,14 @@ namespace MyFirstApp
             dataGridView.Dock = DockStyle.Fill;
             dataGridView.Location = new Point(3, 321);
             dataGridView.Name = "dataGridView";
-            dataGridView.Size = new Size(807, 148);
+            dataGridView.Size = new Size(894, 148);
             dataGridView.TabIndex = 3;
             // 
             // Monitoring
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(813, 472);
+            ClientSize = new Size(900, 472);
             Controls.Add(tableLayoutPanel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Monitoring";
@@ -406,5 +514,15 @@ namespace MyFirstApp
         private CheckedListBox classCheckedListBox;
         private ImageList imageList;
         private DataGridView dataGridView;
+        private Button InquiryButton;
+        private Label label1;
+        private DateTimePicker toDateTimePicker;
+        private DateTimePicker fromDateTimePicker;
+        private Label confidenceLabel;
+        private TextBox confidenceText;
+        private Label label3;
+        private TextBox AreaText;
+        private Label label4;
+        private Label label2;
     }
 }

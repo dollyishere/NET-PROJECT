@@ -13,12 +13,6 @@
 		<Width>150</Width>
 	</Column>
 	<Column>
-		<DataPropertyName>area</DataPropertyName>
-		<HeaderText>Area</HeaderText>
-		<MinimumWidth>8</MinimumWidth>
-		<Width>150</Width>
-	</Column>
-	<Column>
 		<DataPropertyName>min_x</DataPropertyName>
 		<HeaderText>Min X</HeaderText>
 		<MinimumWidth>8</MinimumWidth>
@@ -39,6 +33,12 @@
 	<Column>
 		<DataPropertyName>max_y</DataPropertyName>
 		<HeaderText>Max Y</HeaderText>
+		<MinimumWidth>8</MinimumWidth>
+		<Width>200</Width>
+	</Column>
+	<Column>
+		<DataPropertyName>area</DataPropertyName>
+		<HeaderText>Area</HeaderText>
 		<MinimumWidth>8</MinimumWidth>
 		<Width>200</Width>
 	</Column>

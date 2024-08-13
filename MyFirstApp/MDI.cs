@@ -15,6 +15,8 @@ namespace MyFirstApp
         private int childFormNumber = 0;
         DBInformation dbinfoForm;
         AboutBoxForm aboutForm;
+        Monitoring monitoringForm;
+        ClsCode clsCode;
 
         public MDI()
         {
@@ -108,12 +110,20 @@ namespace MyFirstApp
 
         private void detectedToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Monitoring monitoringForm = new Monitoring();
-            monitoringForm.MdiParent = this;
-            monitoringForm.Show();
+            if (monitoringForm == null || monitoringForm.IsDisposed)
+            {
+                monitoringForm = new Monitoring();
+                monitoringForm.MdiParent = this;
+                monitoringForm.FormClosed += DbinfoForm_FormClosed;
+                monitoringForm.Show();
+            }
+            else
+            {
+                monitoringForm.Activate();
+            }
         }
 
-        private void dB정보ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void dBInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dbinfoForm == null || dbinfoForm.IsDisposed)
             {
@@ -142,16 +152,32 @@ namespace MyFirstApp
                 aboutForm.FormClosed += AboutForm_FormClosed;
                 aboutForm.Show();
 
-            } else
-            {
-                aboutForm.Activate(); 
             }
-           
+            else
+            {
+                aboutForm.Activate();
+            }
+
         }
 
         private void AboutForm_FormClosed(object? sender, FormClosedEventArgs e)
         {
             aboutForm = null;
+        }
+
+        private void clsInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+             if (clsCode == null || clsCode.IsDisposed)
+            {
+                clsCode = new ClsCode();
+                clsCode.MdiParent = this;
+                clsCode.FormClosed += DbinfoForm_FormClosed;
+                clsCode.Show();
+            }
+            else
+            {
+                clsCode.Activate();
+            }
         }
     }
 }
