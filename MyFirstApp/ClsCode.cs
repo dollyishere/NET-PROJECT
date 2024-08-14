@@ -64,11 +64,11 @@ namespace MyFirstApp
                     {
                         cmd.Parameters.AddWithValue("@filter", filter + "%");
                     }
-                    /*                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                                        DataTable dataTable = new DataTable();
-                                        adapter.Fill(dataTable);
-
-                                        dataGridView1.DataSource = dataTable;*/
+                    /*  
+                        MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+                        dataGridView1.DataSource = dataTable;*/
 
                     using (MySqlDataReader reader = cmd.ExecuteReader())
                     {

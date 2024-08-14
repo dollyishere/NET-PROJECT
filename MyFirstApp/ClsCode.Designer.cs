@@ -31,6 +31,7 @@ namespace MyFirstApp
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             txtFilter = new TextBox();
             searchButton = new Button();
             newButton = new Button();
@@ -42,10 +43,15 @@ namespace MyFirstApp
             deleteButton = new Button();
             tableLayoutPanel3 = new TableLayoutPanel();
             dataGridView1 = new DataGridView();
+            contextMenuStrip = new ContextMenuStrip(components);
+            newItem = new ToolStripMenuItem();
+            saveItem = new ToolStripMenuItem();
+            deleteItem = new ToolStripMenuItem();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            contextMenuStrip.SuspendLayout();
             SuspendLayout();
             // 
             // txtFilter
@@ -175,6 +181,7 @@ namespace MyFirstApp
             dataGridView1.AllowDrop = true;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.ContextMenuStrip = contextMenuStrip;
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(3, 3);
             dataGridView1.Name = "dataGridView1";
@@ -183,6 +190,33 @@ namespace MyFirstApp
             dataGridView1.Size = new Size(392, 286);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
+            // 
+            // contextMenuStrip
+            // 
+            contextMenuStrip.Items.AddRange(new ToolStripItem[] { newItem, saveItem, deleteItem });
+            contextMenuStrip.Name = "contextMenuStrip";
+            contextMenuStrip.Size = new Size(109, 70);
+            // 
+            // newItem
+            // 
+            newItem.Name = "newItem";
+            newItem.Size = new Size(108, 22);
+            newItem.Text = "New";
+            newItem.Click += newButton_Click;
+            // 
+            // saveItem
+            // 
+            saveItem.Name = "saveItem";
+            saveItem.Size = new Size(108, 22);
+            saveItem.Text = "Save";
+            saveItem.Click += saveButton_Click;
+            // 
+            // deleteItem
+            // 
+            deleteItem.Name = "deleteItem";
+            deleteItem.Size = new Size(108, 22);
+            deleteItem.Text = "Delete";
+            deleteItem.Click += deleteButton_Click;
             // 
             // ClsCode
             // 
@@ -200,6 +234,7 @@ namespace MyFirstApp
             tableLayoutPanel2.PerformLayout();
             tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            contextMenuStrip.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -249,5 +284,9 @@ namespace MyFirstApp
         private TableLayoutPanel tableLayoutPanel3;
         private DataGridView dataGridView1;
         private Button deleteButton;
+        private ContextMenuStrip contextMenuStrip;
+        private ToolStripMenuItem newItem;
+        private ToolStripMenuItem saveItem;
+        private ToolStripMenuItem deleteItem;
     }
 }

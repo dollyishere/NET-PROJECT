@@ -302,7 +302,7 @@
             // 
             clsInfoToolStripMenuItem.Image = (Image)resources.GetObject("clsInfoToolStripMenuItem.Image");
             clsInfoToolStripMenuItem.Name = "clsInfoToolStripMenuItem";
-            clsInfoToolStripMenuItem.Size = new Size(180, 22);
+            clsInfoToolStripMenuItem.Size = new Size(166, 22);
             clsInfoToolStripMenuItem.Text = "클래스 코드";
             clsInfoToolStripMenuItem.Click += clsInfoToolStripMenuItem_Click;
             // 
@@ -310,7 +310,7 @@
             // 
             detectedToolStripMenuItem.Image = (Image)resources.GetObject("detectedToolStripMenuItem.Image");
             detectedToolStripMenuItem.Name = "detectedToolStripMenuItem";
-            detectedToolStripMenuItem.Size = new Size(180, 22);
+            detectedToolStripMenuItem.Size = new Size(166, 22);
             detectedToolStripMenuItem.Text = "객체 인식 데이터";
             detectedToolStripMenuItem.Click += detectedToolStripMenuItem_Click;
             // 
@@ -529,6 +529,7 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "MDI";
             Text = "IoT";
+            FormClosing += MDI_FormClosing;
             menuStrip.ResumeLayout(false);
             menuStrip.PerformLayout();
             toolStrip.ResumeLayout(false);

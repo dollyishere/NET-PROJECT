@@ -167,7 +167,7 @@ namespace MyFirstApp
 
         private void clsInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-             if (clsCode == null || clsCode.IsDisposed)
+            if (clsCode == null || clsCode.IsDisposed)
             {
                 clsCode = new ClsCode();
                 clsCode.MdiParent = this;
@@ -178,6 +178,11 @@ namespace MyFirstApp
             {
                 clsCode.Activate();
             }
+        }
+
+        private void MDI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

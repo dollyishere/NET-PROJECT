@@ -33,18 +33,28 @@ namespace MyFirstApp
             if (createNew)
             {
                 ApplicationConfiguration.Initialize();
-                Application.Run(new MDI());
+                using (LoginForm login = new LoginForm())
+                {
+                    // Dialog는 사용자에게 강력하게 권장하는 것
+                    // 무조건 로그인하도록 강요하는 느낌이라고 보면 될 듯?
+                    login.ShowDialog();
+                    if (login.isAuthenticated == true)
+                    {
+                        Application.Run(new MDI());
+                    }
+                }
             } else
             {
                 MessageBox.Show("Another instance of the application is already running");
             }
 
 
-            // To customize application configuration such as set high DPI settings or default font,
+/*            // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            Application.Run(new MDI());
+            // Application.Run(new MDI());
+            Application.Run(new LoginForm());*/
         }
     }
 }
